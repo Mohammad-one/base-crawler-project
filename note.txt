@@ -1,23 +1,22 @@
 │── src/
 │   ├── crawlers/
 │   │   ├── __init__.py
-│   │   ├── base_scrapy.py          ### based on the performance of each one we can make decision which one is best suited for us
 │   │   ├── base_selenium.py
-│   │   ├── pipelines.py            # Scrapy pipelines for processing data
-│   │   ├── middlewares.py          # Scrapy middlewares
-│   │   ├── items.py                # Scrapy item definitions
+│   │   ├── pipelines.py
+│   │   ├── middlewares.py
+│   │   ├── items.py
 │   │
-│   ├── core/                       # Core configurations & utilities
+│   ├── core/
 │   │   ├── __init__.py
-│   │   ├── config.py               # Configuration settings
-│   │   ├── logger.py               # Logging setup
-│   │   ├── database.py             # Database connection logic
-│   │   ├── selenium_manager.py     # Manages Selenium drivers
+│   │   ├── config.py
+│   │   ├── logger.py
+│   │   ├── database.py
+│   │   ├── selenium_manager.py
 │   │
-│   ├── repositories/               # Database interactions
+│   ├── repositories/
 │   │   ├── __init__.py
-│   │   ├── base.py                 # Base repository
-│   │   ├── crawled_data.py         # Crawled data repository
+│   │   ├── base.py
+│   │   ├── crawled_data.py
 │   │
 │   ├── models/
 │   │   ├── __init__.py
@@ -29,28 +28,24 @@
 │   │   ├── base.py
 │   │   ├── crawled_data.py
 │   │
-│   ├── services/                    # Business logic layer
+│   ├── services/
 │   │   ├── __init__.py
-│   │   ├── crawler_service.py       # for managing crawler execution
-│   │   ├── queue_manager.py         # to Handles message queue for crawlers
+│   │   ├── crawler_service.py
+│   │   ├── queue_manager.py
 │   │
 │   ├── api/
 │   │
-│   ├── workers/                     # Background tasks
+│   ├── workers/
 │   │   ├── __init__.py
-│   │   ├── scheduler.py             # Task scheduler
+│   │   ├── scheduler.py
 │   │
-│   ├── queue/                       # Message Queue (Celery / Kafka / RabbitMQ)
+│   ├── queue/
 │   │   ├── __init__.py
-│   │   ├── celery_worker.py         # Celery worker for async execution
+│   │   ├── celery_worker.py
 │   │
-│   ├── tests/                       # Tests
-│   │   ├── __init__.py
-│   │   ├── test_scrapy.py           # Test Scrapy crawlers
-│   │   ├── test_selenium.py         # Test Selenium crawlers
-│   │   ├── test_api.py              # Test API endpoints
+│   ├── tests/
 │   │
------------------------------------------------------------------------------------------
+---------------------------   -+summary +-   ---------------------------
 -- Modular Crawlers
     Supports Scrapy (static data) and Selenium (JavaScript-heavy sites).
     Each crawler is independent and reusable.
@@ -69,3 +64,5 @@
 
 -- Database & Storage
     Stores structured data in PostgreSQL.
+=======================
+https://chatgpt.com/c/67c6c2ca-1778-8011-9e82-011c9f9166ae
