@@ -1,0 +1,71 @@
+│── src/
+│   ├── crawlers/
+│   │   ├── __init__.py
+│   │   ├── base_scrapy.py          ### based on the performance of each one we can make decision which one is best suited for us
+│   │   ├── base_selenium.py
+│   │   ├── pipelines.py            # Scrapy pipelines for processing data
+│   │   ├── middlewares.py          # Scrapy middlewares
+│   │   ├── items.py                # Scrapy item definitions
+│   │
+│   ├── core/                       # Core configurations & utilities
+│   │   ├── __init__.py
+│   │   ├── config.py               # Configuration settings
+│   │   ├── logger.py               # Logging setup
+│   │   ├── database.py             # Database connection logic
+│   │   ├── selenium_manager.py     # Manages Selenium drivers
+│   │
+│   ├── repositories/               # Database interactions
+│   │   ├── __init__.py
+│   │   ├── base.py                 # Base repository
+│   │   ├── crawled_data.py         # Crawled data repository
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── crawled_data.py
+│   │
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── crawled_data.py
+│   │
+│   ├── services/                    # Business logic layer
+│   │   ├── __init__.py
+│   │   ├── crawler_service.py       # for managing crawler execution
+│   │   ├── queue_manager.py         # to Handles message queue for crawlers
+│   │
+│   ├── api/
+│   │
+│   ├── workers/                     # Background tasks
+│   │   ├── __init__.py
+│   │   ├── scheduler.py             # Task scheduler
+│   │
+│   ├── queue/                       # Message Queue (Celery / Kafka / RabbitMQ)
+│   │   ├── __init__.py
+│   │   ├── celery_worker.py         # Celery worker for async execution
+│   │
+│   ├── tests/                       # Tests
+│   │   ├── __init__.py
+│   │   ├── test_scrapy.py           # Test Scrapy crawlers
+│   │   ├── test_selenium.py         # Test Selenium crawlers
+│   │   ├── test_api.py              # Test API endpoints
+│   │
+-----------------------------------------------------------------------------------------
+-- Modular Crawlers
+    Supports Scrapy (static data) and Selenium (JavaScript-heavy sites).
+    Each crawler is independent and reusable.
+
+-- API endpoints:
+    POST /api/v1/crawler/start -> Start a crawler
+    POST /api/v1/crawler/stop -> Stop a crawler
+    GET /api/v1/data -> Retrieve crawled data
+
+-- Asynchronous Execution:
+    Uses Celery / RabbitMQ / Kafka to manage crawling tasks.
+    Allows parallel crawling without blocking API.
+
+-- Task Scheduling:
+    Uses APScheduler / Celery beat to automate crawling at intervals.
+
+-- Database & Storage
+    Stores structured data in PostgreSQL.
