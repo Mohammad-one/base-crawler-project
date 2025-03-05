@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Text, DateTime, func
-from src.core.database import Base
+from src.configs.database import Base
 
 
 class CrawledData(Base):

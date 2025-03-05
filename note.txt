@@ -66,3 +66,17 @@
     Stores structured data in PostgreSQL.
 =======================
 https://chatgpt.com/c/67c6c2ca-1778-8011-9e82-011c9f9166ae
+
+
+
+---------------------------------------------
+│── src/
+│   ├── configs/
+│   ├── controller/
+│   ├── helpers/
+│   ├── logics/
+│   ├── models/
+│   ├── repositories/
+
+
+

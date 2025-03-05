@@ -1,6 +1,6 @@
 from src.crawlers.base_selenium_crawler import BaseSeleniumCrawler
 from src.repositories.crawled_data_repo import CrawledDataRepository
-from src.core.database import get_db
+from src.configs.database import get_db
 import logging
 
 
