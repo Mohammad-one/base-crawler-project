@@ -1,10 +1,10 @@
-from src.crawlers.base_selenium_crawler import BaseSeleniumCrawler
+from src.crawlers.base_selenium_crawler import BaseSelenium
 from src.repositories.crawled_data_repo import CrawledDataRepository
 from src.configs.database import get_db
 import logging
 
 
-class CrawlerService(BaseSeleniumCrawler):
+class Service(BaseSelenium):
     def __init__(self):
         super().__init__()
         self.crawlers = {}
@@ -29,4 +29,4 @@ class CrawlerService(BaseSeleniumCrawler):
                 "content": saved_entry.content}
 
 
-crawler_service = CrawlerService()
+crawler_service = Service()
