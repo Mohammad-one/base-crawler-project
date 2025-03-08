@@ -1,5 +1,5 @@
 from celery import Celery
-from src.logics.crawler_service import crawler_service
+from src.services.crawler_service import crawler_service
 import os
 
 CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "redis://localhost:6379/0")

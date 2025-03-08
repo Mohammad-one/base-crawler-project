@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 import logging
-from src.core.config import settings
+from src.configs.config import settings
 
 
 class SeleniumManager:
@@ -14,14 +14,13 @@ class SeleniumManager:
         self.options.add_argument(f"no-sandbox")
         self.options.add_argument(f"disable-dev-shm-usage")
 
-        if settings.HEADLESS_MODE:
-            self.options.add_argument("--headless")
         self.service = Service(settings.SELENIUM_DRIVER_PATH)
         self.driver = None
 
     def start_driver(self):
         if self.driver is None:
             self.driver = webdriver.Firefox(service=self.service, options=self.options)
+            # self.driver = webdriver.Chrome(service=self.service, options=self.options)
             self.driver.implicitly_wait(settings.SELENIUM_TIMEOUT)
         return self.driver
 

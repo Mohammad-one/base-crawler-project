@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+selenium
+celery
+redis
+sqlalchemy
+alembic
+pytest
+python-dotenv
